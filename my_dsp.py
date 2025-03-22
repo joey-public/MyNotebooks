@@ -1,6 +1,9 @@
 import numpy as np
 import scipy as sp
 
+def db20(x):
+    return 20*np.log10(np.abs(x))
+
 def my_fft(x_n, fs, fftlen=-1, shifted=True, window='rect'):
     if not (window=='rect'): x_n = apply_window(x_n, window)
     if fftlen < len(x_n):  fftlen = len(x_n)
